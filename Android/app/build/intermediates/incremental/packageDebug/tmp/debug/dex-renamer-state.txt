@@ -1,0 +1,7 @@
+#Sun Jan 19 19:12:54 MSK 2020
+base.0=F\:\\Native_DLL\\tsd1C_Native\\Android\\app\\build\\intermediates\\dex\\debug\\mergeExtDexDebug\\out\\classes.dex
+path.1=classes.dex
+renamed.1=classes2.dex
+path.0=classes.dex
+renamed.0=classes.dex
+base.1=F\:\\Native_DLL\\tsd1C_Native\\Android\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\out\\classes.dex
