@@ -6,8 +6,6 @@
 #include "IMemoryManager.h"
 #include <string>
 
-/* Wrapper calling class LockState from java build org.ripreal.androidutils */
-
 class MainApp
 {
 private:
