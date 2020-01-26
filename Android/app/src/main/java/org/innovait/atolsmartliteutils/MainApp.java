@@ -66,7 +66,8 @@ public class MainApp implements Runnable {
                 event = "NewBarcode";
                 type = intent.getStringExtra("EXTRA_BARCODE_DECODING_SYMBOLE");
                 data = intent.getStringExtra("EXTRA_BARCODE_DECODING_DATA");
-                OnBroadcastReceive(m_V8Object, event, type, data);
+                Log.d("innova", type.toString());
+                OnBroadcastReceive(m_V8Object, event.toString(), type, data);
                 break;
               case NEW_KEY_UP:
                 event = "NewKeyUP";
