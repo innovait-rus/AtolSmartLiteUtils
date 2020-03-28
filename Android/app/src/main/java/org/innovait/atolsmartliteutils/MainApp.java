@@ -1,17 +1,3 @@
-
-/////////////////////////////////////////////////////////////////////////////////////////////////////
-//
-// Examples for the report "Making external components for 1C mobile platform for Android""
-// at the conference INFOSTART 2018 EVENT EDUCATION https://event.infostart.ru/2018/
-//
-// Sample 1: Delay in code
-// Sample 2: Getting device information
-// Sample 3: Device blocking: receiving external event about changing of sceen
-//
-// Copyright: Igor Kisil 2018
-//
-/////////////////////////////////////////////////////////////////////////////////////////////////////
-
 package org.innovait.atolsmartliteutils;
 
 import android.app.Activity;
