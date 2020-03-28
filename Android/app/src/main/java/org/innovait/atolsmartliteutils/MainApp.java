@@ -28,6 +28,8 @@ public class MainApp implements Runnable {
 
   private static final String NEW_KEY_UP = "org.innovait.action.NEW_KEY_UP";
   private static final String KEY_CODE = "KEY_CODE";
+  private static final String AtolSmartLite_BARCODE = "com.xcheng.scanner.action.BARCODE_DECODING_BROADCAST";
+  private static final String DS2_BARCODE = "app.dsic.barcodetray.BARCODE_BR_DECODING_DATA";
 
   private long m_V8Object; // 1C application context
   private Activity m_Activity; // custom activity of 1C:Enterprise
@@ -62,12 +64,19 @@ public class MainApp implements Runnable {
             String event, type, data;
 
             switch (intent.getAction()) {
-              case "com.xcheng.scanner.action.BARCODE_DECODING_BROADCAST":
+              case AtolSmartLite_BARCODE:
                 event = "NewBarcode";
                 type = intent.getStringExtra("EXTRA_BARCODE_DECODING_SYMBOLE");
                 data = intent.getStringExtra("EXTRA_BARCODE_DECODING_DATA");
-                Log.d("innova", type.toString());
-                OnBroadcastReceive(m_V8Object, event.toString(), type, data);
+                //Log.d("innova", type.toString());
+                OnBroadcastReceive(m_V8Object, event, type, data);
+                break;
+              case DS2_BARCODE:
+                event = "NewBarcode";
+                type = intent.getStringExtra("EXTRA_BARCODE_DECODED_SYMBOLE");
+                data = intent.getStringExtra("EXTRA_BARCODE_DECODED_DATA");
+                //Log.d("innova", type);
+                OnBroadcastReceive(m_V8Object, event, type, data);
                 break;
               case NEW_KEY_UP:
                 event = "NewKeyUP";
@@ -80,7 +89,8 @@ public class MainApp implements Runnable {
       };
 
       IntentFilter filter = new IntentFilter();
-      filter.addAction("com.xcheng.scanner.action.BARCODE_DECODING_BROADCAST");
+      filter.addAction(AtolSmartLite_BARCODE);
+      filter.addAction(DS2_BARCODE);
       filter.addAction(NEW_KEY_UP);
 
       m_Activity.registerReceiver(m_Receiver, filter);
